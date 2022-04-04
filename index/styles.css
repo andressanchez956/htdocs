@@ -1,0 +1,116 @@
+/* admin styling */
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+h2 {
+  text-align: center;
+}
+
+.admin {
+  margin: auto;
+  width: fit-content;
+}
+/* admin styling END */
+
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 1000px;
+  font-family: sans-serif;
+}
+  
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-top: 1.5em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+}
+
+select {
+  width: 505px;
+  background-color: #e4e3e3;
+  padding: 2px 10px;
+  border: 1px solid black;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+  By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 250px;
+  box-sizing: border-box;
+
+  background-color: #e4e3e3;
+  padding: 2px 10px;
+  border: 1px solid black;
+}
+
+#mail, #flight-num, #other {
+  width: 505px;
+}
+
+#other {
+  height: 200px;
+}
+
+.pickup {
+  background: black;
+}
+
+#yes, #no {
+  width: auto;
+}
+
+#no {
+  margin-left: 259.5px;
+}
+
+#otherLabel {
+  position: relative;
+  bottom: 90px;
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+.button {
+  /* Align buttons with the text fields */
+  padding-left: 255px;
+}
+
+button {
+  background-color: #444444;
+  padding: 12px 30px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: black;
+}
