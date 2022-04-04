@@ -3,7 +3,7 @@
 
     $roomtype = $_POST['room-type'];
     $numguests = $_POST['num-guests'];
-    $name = $_POST['fname'];
+    $name = $_POST['fname'] . ' ' . $_POST['lname'];
     $email = $_POST['mail'];
 
     $arrival_date = $_POST['arrival-date'];

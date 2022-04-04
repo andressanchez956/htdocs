@@ -44,43 +44,44 @@
             } 
         ?>
 
-            <h2>Reservation Update Form</h2>
-            <form action="" method="post">
-
-            <fieldset>
-                <legend>Enter your information:</legend>
-                Room Type:<br>
-                <input type="text" name="rType" value="<?php echo $rType; ?>">
-                <input type="hidden" name="custNum" value="<?php echo $custNum; ?>">
-                <br>
-                Number of Guests:<br>
-                <input type="text" name="numGuests" value="<?php echo $numGuests; ?>">
-                <br>
-                Full Name:<br>
-                <input type="text" name="name" value="<?php echo $name; ?>">
-                <br>
-                Email:<br>
-                <input type="email" name="mail" value="<?php echo $mail; ?>">
-                <br>
-                Arrival:<br>
-                <input type="datetime" name="arr" value="<?php echo $arr; ?>">
-                <br>
-                Departure:<br>
-                <input type="datetime" name="dep" value="<?php echo $dep; ?>">
-                <br>
-                Free pickup?:<br>
-                <input type="radio" name="freePick" value="yes" <?php if($freePick == 'yes'){ echo "checked";} ?>>Yes, Sure!
-                <input type="radio" name="freePick" value="no" <?php if($freePick == 'no'){ echo "checked";} ?>>No, I already rented a car.
-                <br>
-                Flight  Number:<br>
-                <input type="text" name="flightNum" value="<?php echo $flightNum; ?>">
-                <br>
-                Other Requests:<br>
-                <input type="text" name="otherReq" value="<?php echo $otherReq; ?>">
-                <br><br>
-                <input type="submit" value="Update" name="update">
-            </fieldset>
-            </form> 
+            <html lang="en">
+            <body>
+                <h2 style="font-family: sans-serif">Reservation Update Form</h2>
+                <form action="" method="post" style="font-family: sans-serif">
+                    <fieldset>
+                        <legend>Enter your information:</legend>
+                        Room Type:<br>
+                        <input type="text" name="Roomtype" value="<?php echo $rType; ?>">
+                        <input type="hidden" name="Customernumber" value="<?php echo $custNum; ?>">
+                        <br>
+                        Number of Guests:<br>
+                        <input type="text" name="Numberofguests" value="<?php echo $numGuests; ?>">
+                        <br>
+                        Full Name:<br>
+                        <input type="text" name="FullName" value="<?php echo $name; ?>">
+                        <br>
+                        Email:<br>
+                        <input type="email" name="Email" value="<?php echo $mail; ?>">
+                        <br>
+                        Arrival:<br>
+                        <input type="datetime" name="Arrival" value="<?php echo $arr; ?>">
+                        <br>
+                        Departure:<br>
+                        <input type="datetime" name="Departure" value="<?php echo $dep; ?>">
+                        <br>
+                        Free pickup?:<br>
+                        <input type="radio" name="Freepickup" value="yes" <?php if($freePick == 'yes'){ echo "checked";} ?>>Yes, Sure!
+                        <input type="radio" name="Freepickup" value="no" <?php if($freePick == 'no'){ echo "checked";} ?>>No, I already rented a car.
+                        <br>
+                        Flight  Number:<br>
+                        <input type="text" name="FlightNumber" value="<?php echo $flightNum; ?>">
+                        <br>
+                        Other Requests:<br>
+                        <input type="text" name="Otherrequest" value="<?php echo $otherReq; ?>">
+                        <br><br>
+                        <input type="submit" value="Update" name="update">
+                    </fieldset>
+                </form> 
             </body>
             </html> 
 
