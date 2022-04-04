@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h2 style="font-family: sans-serif">Welcome, Admin!!!!!!!</h2>
+        <h2 style="font-family: sans-serif">Welcome, Admin!</h2>
         <form class="admin" action="../formc">
             <button type="submit">Register as new customer</button>
         </form>

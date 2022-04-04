@@ -1,9 +1,5 @@
 <?php
-    session_start();
-
     include_once '../dbh.php';
-
-    $submitted = FALSE;
 
     $roomtype = $_POST['room-type'];
     $numguests = $_POST['num-guests'];
@@ -26,7 +22,6 @@
     } else {
         $other = $_POST['other'];
     }
-    
 
     $sql = "INSERT INTO hotel (RoomType, Numberofguests, FullName, Email, Arrival, Departure, Freepickup, FlightNumber, Otherrequest) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
@@ -38,10 +33,10 @@
         mysqli_stmt_bind_param($stmt, "sssssssss", $roomtype, $numguests, $name, $email, $arrival, $departure, $freepickup, $flightnum, $other);
         mysqli_stmt_execute($stmt);
 
-        $_SESSION['status'] = TRUE;
+        header("Location: formsuccess");
     }
     
     $conn->close();
 
-    header("Location: index.php?signup=success");
+    
 ?>
