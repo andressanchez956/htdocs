@@ -7,11 +7,18 @@
         $numguests = $_POST['num-guests'];
         $name = $_POST['fname'] . ' ' . $_POST['lname'];
         $email = $_POST['mail'];
+
         $arrival = $_POST['arrival-date'] . ' ' . $_POST['arrival-time'];
         $departure = $_POST['departure-date'] . ' ' . $_POST['departure-time'];
+
         $freepickup = $_POST['pickup'];
         $flightnum = $_POST['flight-num'];
-        $other = $_POST['other'];
+        
+        if (!$_POST['other']) {
+            $other = 'N/A';
+        } else {
+            $other = $_POST['other'];
+        }
 
         $sql = "UPDATE `hotel` SET `RoomType`='$roomtype',`Numberofguests`='$numguests',`FullName`='$name',`Email`='$email',`Arrival`='$arrival', `Departure`='$departure', `Freepickup`='$freepickup', `FlightNumber`='$flightnum', `Otherrequest`='$other' WHERE `Customernumber`='$customernumber'"; 
         $result = $conn->query($sql); 
