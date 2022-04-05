@@ -1,6 +1,4 @@
 <?php
-    session_start();
-
     include_once "../dbh.php";
 
     $sql = "SELECT * FROM hotel";
@@ -16,7 +14,7 @@
 <body>
     <?php
         if(isset($_SESSION['status'])) {
-            echo '<h2 style="color: green;font-family: sans-serif;font-weight: bold">Record deleted successfully</h2>';
+            echo '<h2 style="color: green;font-family: sans-serif;font-weight: bold; text-align: center;">Record deleted successfully</h2>';
             unset($_SESSION['status']);
         }
     ?>    

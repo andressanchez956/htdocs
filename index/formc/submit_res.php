@@ -6,16 +6,16 @@
     $name = $_POST['fname'] . ' ' . $_POST['lname'];
     $email = $_POST['mail'];
 
-    $arrival_date = $_POST['arrival-date'];
-    $departure_date = $_POST['departure-date'];
-    $arrival_time = $_POST['arrival-time'];
-    $departure_time = $_POST['departure-time'];
+    $arrival_date = $_POST['arrivalDate'];
+    $departure_date = $_POST['departureDate'];
+    $arrival_time = $_POST['arrivalTime'];
+    $departure_time = $_POST['departureTime'];
 
     $arrival = date('Y-m-d H:i:s', strtotime("$arrival_date $arrival_time"));
     $departure = date('Y-m-d H:i:s', strtotime("$departure_date $departure_time"));
 
     $freepickup = $_POST['pickup'];
-    $flightnum = $_POST['flight-num'];
+    $flightnum = $_POST['flightNum'];
 
     if (!$_POST['other']) {
         $other = 'N/A';
