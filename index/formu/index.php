@@ -8,12 +8,12 @@
         $name = $_POST['fname'] . ' ' . $_POST['lname'];
         $email = $_POST['mail'];
 
-        $arrival = $_POST['arrival-date'] . ' ' . $_POST['arrival-time'];
-        $departure = $_POST['departure-date'] . ' ' . $_POST['departure-time'];
+        $arrival = $_POST['arrivalDate'] . ' ' . $_POST['arrivalTime'];
+        $departure = $_POST['departureDate'] . ' ' . $_POST['departureTime'];
 
         $freepickup = $_POST['pickup'];
-        $flightnum = $_POST['flight-num'];
-        
+        $flightnum = $_POST['flightNum'];
+
         if (!$_POST['other']) {
             $other = 'N/A';
         } else {
@@ -69,9 +69,61 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Reservations</title>
                 <link rel="stylesheet" href="../styles.css">
+
+                <script>
+                    function validateForm(doc) {
+                        if (doc.fname.value == "") {
+                            alert("Please enter your first name.");
+                            doc.fname.focus();
+                            return false;
+                        }
+                        if (doc.lname.value == "") {
+                            alert("Please enter your last name.");
+                            doc.lname.focus();
+                            return false;
+                        }
+                        if (doc.mail.value == "") {
+                            alert("Please enter your email.");
+                            doc.mail.focus();
+                            return false;
+                        }
+                        if (!doc.arrivalDate.value) {
+                            alert("Please enter your arrival date.");
+                            doc.arrivalDate.focus();
+                            return false;
+                        }
+                        if (!doc.arrivalTime.value) {
+                            alert("Please enter your arrival time.");
+                            doc.arrivalTime.focus();
+                            return false;
+                        }
+                        if (!doc.departureDate.value) {
+                            alert("Please enter your departure date.");
+                            doc.departureDate.focus();
+                            return false;
+                        }
+                        if (!doc.departureTime.value) {
+                            alert("Please enter your departure time.");
+                            doc.departureTime.focus();
+                            return false;
+                        }
+
+                        var checked_pickup = doc.querySelector('input[name = "pickup"]:checked');
+                        if(checked_pickup == null) {
+                            alert('Please select a pickup option');
+                            return false;
+                        }
+
+                        if (doc.flightNum.value == "") {
+                            alert("Please enter your flight number.");
+                            doc.flightNum.focus();
+                            return false;
+                        }
+                    }
+                </script>
             </head>
             <body>
-                <form action="" method="POST">
+                <form onsubmit="return validateForm(this);" action="" method="POST">
                     <h1>Update Hotel Booking</h1>
                     <ul>
                         <li>
@@ -106,13 +158,13 @@
                         </li>
                         <li>
                             <label>Arrival *</label>
-                            <input type="date" name="arrival-date" id="arrival-date" value="<?php echo $arr_date; ?>">
-                            <input type="time" name="arrival-time" id="arrival-time" value="<?php echo $arr_time; ?>">
+                            <input type="date" name="arrivalDate" id="arrival-date" value="<?php echo $arr_date; ?>">
+                            <input type="time" name="arrivalTime" id="arrival-time" value="<?php echo $arr_time; ?>">
                         </li>
                         <li>
                             <label>Departure *</label>
-                            <input type="date" name="departure-date" id="departure-date" value="<?php echo $dep_date; ?>">
-                            <input type="time" name="departure-time" id="departure-time" value="<?php echo $dep_time; ?>">
+                            <input type="date" name="departureDate" id="departure-date" value="<?php echo $dep_date; ?>">
+                            <input type="time" name="departureTime" id="departure-time" value="<?php echo $dep_time; ?>">
                         </li>
                         <li>
                             <label for="pickup">Free Pickup *</label>
@@ -123,8 +175,8 @@
                                 <label for="no">No, I already rented a car.</label>                
                         </li>
                         <li>
-                            <label for="flight-num">Flight Number *</label>
-                            <input type="text" name="flight-num" id="flight-num" value="<?php echo $flightNum; ?>">
+                            <label for="flightNum">Flight Number *</label>
+                            <input type="text" name="flightNum" id="flight-num" value="<?php echo $flightNum; ?>">
                         </li>
                         <li>
                             <label for="other" id="otherLabel">Other requests</label>
